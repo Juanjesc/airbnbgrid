@@ -1,0 +1,399 @@
+:root{
+    --fuentePrincipal:'Lato', sans-serif;
+    --primario: #da595e;
+    --oscuro:#484848;
+    --claro:#ffffff;
+    --purple: rgba(128, 0, 128, 0.801);
+    --azul: rgb(81, 81, 255);
+
+}
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fuentePrincipal);
+}
+h1{
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+/*Interfaz */
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hero{
+    height: 100vh;
+    background-image: url(../img/arriba.jpg);
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    
+}
+
+.header{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 10% 1fr 10%;
+}
+.header .logo{
+    grid-column: 2 / 3;
+    display: grid;
+    justify-content: center;
+    margin-right: 1rem;
+    align-items: center;
+}
+.navegacion{
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    
+}
+.card img{
+    width: 100%;
+}
+.btn-flotante{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--oscuro);
+    background-color: rgb(253, 252, 250);
+    box-shadow: 0 13px 49px -10px var(--oscuro);
+    text-decoration: none;
+    padding: .5rem 2rem;
+    transition: all .2s ease-in-out;
+}
+.btn-flotante.activo, 
+.btn-flotante:hover{
+    background-color: var(--primario);
+    color: var(--claro);
+}
+@media screen and (min-width: 768px){
+    /*.info{
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+    }
+    .card{
+        padding: .5rem;
+    }*/
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: start;
+        align-items: center;
+        padding-top: 1rem;
+        
+        
+        
+    }
+    
+    
+    
+}
+.navegacion a{
+    color: var(--claro);
+    text-decoration: none;
+    padding-left: 1rem;
+   
+}
+.navegacion a:first-of-type{
+    padding-left: 0;
+}
+.contenido-hero{
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: max-content auto;
+
+}
+.contenido-hero h1{
+    grid-column: 2 / 3;
+    color: var(--claro);
+    
+}
+.contenido-hero form{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    position: relative;
+    display: flex;
+    height: 3.8rem;
+}
+form input[type="text"]{
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    background-image: url(../img/lupa.png);
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    padding-left: 5rem;
+    font-size: 1.8rem;
+    
+}
+form input[type="submit"]{
+    position: absolute;
+    right: .6rem;
+    top: .5rem;
+    padding: .7rem 2rem;
+    border: none;
+    background-color: var(--primario);
+    color: var(--claro);
+    border-radius: 10px;
+    font-family: var(--fuentePrincipal);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    
+    
+}
+form input[type="submit"]:hover{
+    cursor: pointer;
+}
+@media (max-width:450px){
+    .contenido-hero{
+        text-align: center;
+        
+    }
+    .busqueda{
+        width: 100%;
+    }
+    form input[type="submit"]{
+        right: .2rem;
+        
+       
+        
+       
+        
+        
+    }
+    form input[type="text"]{
+        font-size: 1rem;
+        
+        
+        
+    }
+    
+}
+/*Contenido principal */
+.contenedor-card{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 1.5rem;
+}
+.info .concierto{
+    color: var(--primario);
+    
+}
+.info .titulo{
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+
+   
+}
+.info .clase{
+    color: cornflowerblue;
+}
+
+.info .bici{
+    color: var(--purple);
+}
+.info .categoria{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.info .clase-cocina{
+    color: var(--azul);
+}
+.info .precio{
+    color: var(--oscuro);
+}
+/* Premium*/
+.premium{
+    background-image: url(../img/hospedaje-pro.jpg);
+    background-repeat: no-repeat;
+    grid-template-columns: unset;
+    height: 30rem;
+    background-position: center right;
+
+
+}
+@media (min-width: 768px){
+    .premium{
+        grid-template-columns: auto 30%;
+
+    }
+    .premium .info{
+        grid-column: 2 / 3;
+    }
+}
+.premium .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+}
+.premium .info h3{
+    text-align: center;
+    font-size: 2.2rem;
+}
+@media (min-width: 768px){
+    .premium .info h3{
+        text-align: right;
+    }
+}
+.info .boton{
+    text-decoration: none;
+    color: var(--oscuro);
+    background-color: var(--claro);
+    padding: 1rem 2rem;
+    box-shadow: 0 13px 19px -10px var(--oscuro);
+    border-radius: 10px;
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: all .2s ease-in;
+
+   
+}
+.info .boton:hover{
+    background-color: var(--primario);
+    color: var(--claro);
+    cursor: pointer;
+
+}
+/*Sección Hospedaje */
+.hosp .categoria{
+    font-size: .9rem;
+}
+.modulo{
+    margin-bottom: 4rem;
+}
+.popular .card{
+   overflow: hidden;
+   position: relative;
+  
+}
+.popular .card img{
+    transition: all .4s ease;
+}
+.popular .card img:hover{
+    transform: scale(1.5) rotate(20deg) ;
+}
+.paiss{
+    position: absolute;
+    color: var(--claro);
+    bottom: -5px;
+    left: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 5px 5px 5px var(--primario);
+   
+    
+    
+
+}
+.destino .contenedor-card{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    row-gap: 1rem;
+    
+}
+@media (max-width:450px){
+    .modulo{
+        padding: 0 .5rem;
+    }
+    .destino .contenedor-card{
+        gap: 1rem;
+    }
+}
+/*FOOTER */
+
+.footer {
+    background-color: var(--claro);
+    border-top: 1px solid var(--obscuro);
+    padding-top: 3rem;
+    position: fixed;
+    bottom:-150%;
+    transition: all 0.25s ease-in;
+    width: 100%;
+    -webkit-box-shadow: 0px -18px 36px -16px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px -18px 36px -16px rgba(0,0,0,0.52);
+    box-shadow: 0px -18px 36px -16px rgba(0,0,0,0.52);
+    padding: 3rem 0;
+    
+}
+.footer.activo {
+    bottom: 0;
+}
+.footer .contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
+    grid-gap: 1rem;
+}
+.footer .nav-footer {
+    padding: 1rem;
+}
+.footer .nav-footer h3 {
+    font-size: 1.2rem;
+}
+.footer .menu a{
+    color: var(--obscuro);
+    text-decoration: none;
+    display: block;
+    padding-top: .5rem;
+}
+
+
+
+/** Redes Socialaes**/
+
+.sociales ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+}
+.sociales ul li {
+    margin-right: 1rem;
+}
+.sociales ul li:last-of-type {
+    margin-right: 0;
+}
+.sociales ul li a {
+    text-decoration: none;
+}
+.sociales ul li a:before {
+    font-family: "Font Awesome 5 Brands";
+    color: var(--obscuro);
+    font-size: 1.8rem;
+}
+.sociales ul li a[href*='facebook.com']::before {
+    content: "\f39e";
+}
+
+.sociales ul li a[href*='twitter.com']::before {
+    content: "\f099";
+}
+.sociales ul li a[href*='youtube.com']::before {
+    content: "\f431";
+}
+.sociales ul li a[href*='instagram.com']::before {
+    content: "\f16d";
+}
+.sociales ul li a[href*='pinterest.com']::before {
+    content: "\f231 ";
+}
+.sociales ul li span{
+    display: none;
+}
+
+
+
+
+
+
