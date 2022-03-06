@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //Si contiene activo, ejecuta este código
             footer.classList.remove('activo');
             btnFlotante.classList.remove('activo');
-            btnFlotante.innerHTML = 'Footer xd';
+            btnFlotante.innerHTML = 'Info';
         }
         else{
             //Si no lo contiene, ejecuta este código
